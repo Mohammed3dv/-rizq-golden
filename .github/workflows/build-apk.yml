@@ -16,7 +16,7 @@ jobs:
         run: |
           cp -r lib /tmp/lib_backup 2>/dev/null || true
           cp pubspec.yaml /tmp/pubspec_backup.yaml 2>/dev/null || true
-          flutter create. --project-name rizq --org com.rizq.golden --platforms android
+          flutter create . --project-name rizq --org com.rizq.golden --platforms android
           rm -rf lib
           mv /tmp/lib_backup lib
           mv /tmp/pubspec_backup.yaml pubspec.yaml
