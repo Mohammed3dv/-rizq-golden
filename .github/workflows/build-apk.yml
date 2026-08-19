@@ -12,8 +12,17 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+      - name: Fix missing android folder
+        run: |
+          cp -r lib /tmp/lib_backup 2>/dev/null || true
+          cp pubspec.yaml /tmp/pubspec_backup.yaml 2>/dev/null || true
+          flutter create. --project-name rizq --org com.rizq.golden --platforms android
+          rm -rf lib
+          mv /tmp/lib_backup lib
+          mv /tmp/pubspec_backup.yaml pubspec.yaml
+          mkdir -p lib/screens lib/services
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build apk --release --no-tree-shake-icons
       - uses: actions/upload-artifact@v4
         with:
           name: rizq-golden-apk
