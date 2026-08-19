@@ -1,0 +1,20 @@
+name: rizq
+description: رِزْق الذهبي 10.0 - 12 مجال ربحي حلال
+publish_to: 'none'
+version: 10.0.0+1
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.2
+  shared_preferences: ^2.2.2
+  flutter_riverpod: ^2.4.9
+  google_fonts: ^6.1.0
+  fl_chart: ^0.65.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+flutter:
+  uses-material-design: true
